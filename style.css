@@ -232,3 +232,78 @@ ul li:hover {
 .amount.expense {
   color: indianred;
 }
+
+/* Invoice button styling */
+.invoice-btn {
+  background-color: #2d89ef;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.invoice-btn:hover {
+  background-color: #1d5fbf;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .invoice-btn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .invoice-btn {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
+
+
+/* Invoice button styling */
+.invoice-btn {
+  background-color: #2d89ef;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.invoice-btn:hover {
+  background-color: #1d5fbf;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .invoice-btn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .invoice-btn {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
