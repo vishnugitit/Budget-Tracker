@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --bg-color: #f6f8fa;
+  --text-color: #1d1f27;
+  --main-color: #3a3dbe;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h3,
+header {
+  margin-bottom: 0.5rem;
+}
+
+main {
+  width: min(420px, 90%);
+  margin: 1rem auto;
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header div {
+  padding: 5px;
+}
+
+header div:first-child {
+  flex-basis: 100%;
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+header div:nth-child(n + 2) {
+  flex-basis: 50%;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+header h5 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+form input:not(#type),
+form button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  height: 42px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  grid-column: span 2;
+}
+
+form label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: block;
+}
+
+form div:nth-child(-n + 2) {
+  grid-column: span 2;
+}
+
+form div:nth-child(n + 3) {
+  flex-basis: calc(50% - 5px);
+}
+
+input#type {
+  appearance: none;
+  position: absolute;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: yellowgreen;
+  border-radius: 5px;
+  position: relative;
+  transition: background-color 0.25s;
+  cursor: pointer;
+  color: #fff;
+}
+
+.option::before {
+  content: attr(data-option);
+}
+
+.option::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background-color: #fff;
+  height: calc(100% - 10px);
+  width: calc(50% - 10px);
+  transform: translateX(5px);
+  border-radius: inherit;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  transition: left 200ms;
+}
+
+.option::before,
+.option span {
+  width: 50%;
+  text-align: center;
+  cursor: inherit;
+  z-index: 2;
+}
+
+input#type:checked ~ .option::after {
+  left: 50%;
+}
+
+input#type:checked ~ .option {
+  background-color: indianred;
+}
+
+input#type:checked ~ .option span,
+input#type:not(:checked) ~ .option::before {
+  color: #1d1f27;
+}
+
+input[type="date"] {
+  appearance: none;
+  background-color: #fff;
+  color: #1d1f27;
+  text-align: start;
+}
+
+ul {
+  list-style-type: none;
+  margin-bottom: 0.5rem;
+  height: 200px;
+  overflow-y: auto;
+}
+
+ul:empty {
+  border: 2px dashed #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul:empty::before {
+  content: attr(data-placeholder);
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-block: 5px;
+  padding-inline: 10px;
+  position: relative;
+}
+
+ul li:hover {
+  background: #f6f8fa;
+  cursor: pointer;
+}
+
+.name {
+  flex: 1;
+}
+
+.name h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.name p {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.amount {
+  font-weight: 600;
+}
+
+.amount.income {
+  color: yellowgreen;
+}
+
+.amount.expense {
+  color: indianred;
+}
